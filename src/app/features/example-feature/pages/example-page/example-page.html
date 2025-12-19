@@ -1,0 +1,40 @@
+<div class="example-page">
+  <header class="example-page__header">
+    <h1>Example Feature</h1>
+    <app-button
+      label="Refresh"
+      variant="primary"
+      [loading]="facade.loading()"
+      (clicked)="handleRefresh()"
+    />
+  </header>
+
+  @if (facade.loading()) {
+    <div class="example-page__loading">Loading...</div>
+  }
+
+  @if (facade.error(); as error) {
+    <div class="example-page__error">{{ error }}</div>
+  }
+
+  @if (facade.hasItems()) {
+    <div class="example-page__content">
+      <p>Total items: {{ facade.itemsCount() }}</p>
+
+      <ul class="example-page__list">
+        @for (item of facade.items(); track item.id) {
+          <li (click)="handleItemClick(item)">{{ item.name }}</li>
+        }
+      </ul>
+
+      @if (facade.selectedItem(); as selected) {
+        <div class="example-page__selected">
+          <h3>Selected Item:</h3>
+          <p>{{ selected.name }}</p>
+        </div>
+      }
+    </div>
+  } @else if (!facade.loading()) {
+    <div class="example-page__empty">No items found</div>
+  }
+</div>

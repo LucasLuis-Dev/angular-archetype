@@ -1,0 +1,94 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Sizes
+  &--sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  &--md {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  &--lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  // Variants
+  &--primary {
+    background-color: #3b82f6;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: #2563eb;
+    }
+  }
+
+  &--secondary {
+    background-color: #6b7280;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: #4b5563;
+    }
+  }
+
+  &--danger {
+    background-color: #ef4444;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: #dc2626;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: #3b82f6;
+
+    &:hover:not(:disabled) {
+      background-color: rgba(59, 130, 246, 0.1);
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--loading {
+    pointer-events: none;
+  }
+
+  &__spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
