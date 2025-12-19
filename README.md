@@ -55,27 +55,27 @@ Componentes organizados seguindo Atomic Design:
 
 ```
 src/app/
-├── core/ # Serviços globais, guards, interceptors, modelos de domínio
-│ ├── config/ # Configurações da aplicação
-│ ├── guards/ # Route guards (auth, role-based)
-│ ├── interceptors/ # HTTP interceptors
-│ ├── models/ # Modelos globais (User, Auth)
-│ ├── services/ # Serviços singleton (API, Storage, Auth)
-│ └── utils/ # Funções utilitárias
-├── shared/ # Componentes, pipes, directives compartilhados
-│ ├── components/ # Atomic Design (atoms, molecules, organisms, templates)
-│ ├── directives/ # Diretivas reutilizáveis
-│ ├── pipes/ # Pipes customizados
-│ ├── models/ # Modelos compartilhados entre features
-│ └── validators/ # Validadores de formulário
-└── features/ # Features modulares (feature-driven)
-└── [feature-name]/
-├── components/ # Componentes específicos da feature
-├── facades/ # Facades para gerenciamento de estado
-├── services/ # Serviços específicos da feature
-├── models/ # Modelos da feature
-├── pages/ # Páginas da feature
-└── [feature].routes.ts # Rotas da feature
+    ├── core/ # Serviços globais, guards, interceptors, modelos de domínio
+        ├── config/ # Configurações da aplicação
+        ├── guards/ # Route guards (auth, role-based)
+        ├── interceptors/ # HTTP interceptors
+        ├── models/ # Modelos globais (User, Auth)
+        ├── services/ # Serviços singleton (API, Storage, Auth)
+        └── utils/ # Funções utilitárias
+    ├── shared/ # Componentes, pipes, directives compartilhados
+        ├── components/ # Atomic Design (atoms, molecules, organisms, templates)
+        ├── directives/ # Diretivas reutilizáveis
+        ├── pipes/ # Pipes customizados
+        ├── models/ # Modelos compartilhados entre features
+        └── validators/ # Validadores de formulário
+    └── features/ # Features modulares (feature-driven)
+        └── [feature-name]/
+            ├── components/ # Componentes específicos da feature
+            ├── facades/ # Facades para gerenciamento de estado
+            ├── services/ # Serviços específicos da feature
+            ├── models/ # Modelos da feature
+            ├── pages/ # Páginas da feature
+            └── [feature].routes.ts # Rotas da feature
 ```
 
 --- 
